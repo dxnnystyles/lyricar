@@ -16,3 +16,6 @@ node_modules/
 Config/Local.xcconfig
 video/node_modules/
 video/out/*.mp4
+
+# domain skill run record
+.domain/

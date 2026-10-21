@@ -1,0 +1,41 @@
+Lyricar
+Copyright 2026 Alperen Adatepe
+
+This product is licensed under the Apache License, Version 2.0. See the
+LICENSE file for the full text.
+
+------------------------------------------------------------------------
+Third-party components and notices
+------------------------------------------------------------------------
+
+Barlow and Barlow Condensed fonts
+  Bundled files in Shared/Fonts/:
+    Barlow-Light.ttf
+    Barlow-Regular.ttf
+    Barlow-Medium.ttf
+    Barlow-SemiBold.ttf
+    BarlowCondensed-SemiBold.ttf
+    BarlowCondensed-BoldItalic.ttf
+    BarlowCondensed-ExtraBoldItalic.ttf
+  Copyright 2017 The Barlow Project Authors (https://github.com/jpt/barlow)
+  Licensed under the SIL Open Font License, Version 1.1. The full license
+  text ships next to the fonts in Shared/Fonts/OFL-Barlow.txt. The fonts are
+  not covered by the Apache License of this project.
+
+Lyrics
+  Lyricar fetches lyrics at runtime from LRCLIB (https://lrclib.net). No
+  lyrics are included in or distributed with this repository or the app.
+  Lyrics remain the property of their respective rights holders.
+
+Trademarks
+  Spotify is a trademark of Spotify AB. Lyricar is not affiliated with,
+  sponsored by, or endorsed by Spotify AB.
+
+  Apple, iPhone, CarPlay, Dynamic Island, and Live Activities are
+  trademarks of Apple Inc., registered in the U.S. and other countries and
+  regions. Lyricar is not affiliated with, sponsored by, or endorsed by
+  Apple Inc.
+
+  Other product and company names mentioned in this project may be
+  trademarks of their respective owners. They are used for identification
+  only.

@@ -1,0 +1,10 @@
+# Lyricar
+
+> Open source iOS 26 app (Apache-2.0) that shows line-synced lyrics for whatever is playing on your Spotify, on the iPhone, the Lock Screen, the Dynamic Island, widgets and CarPlay. Not on the App Store; you build it from source with Xcode 26 and your own Spotify developer app. Not affiliated with Spotify.
+
+## Pages
+
+- [Landing page](https://lyricar.adatepe.dev/): features, screenshots, how it works, build steps and limits
+- [Source and README](https://github.com/noluyorAbi/lyricar): build instructions and Spotify developer app setup
+- [Changelog](https://github.com/noluyorAbi/lyricar/blob/main/CHANGELOG.md)
+- [Security policy](https://github.com/noluyorAbi/lyricar/security/policy)

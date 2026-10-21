@@ -1,0 +1,42 @@
+# Line endings: normalise to LF in the repository and check out LF everywhere.
+* text=auto eol=lf
+
+# Source and Xcode text formats, LF whatever the contributor's platform does.
+*.swift          text eol=lf diff=swift
+*.xcconfig       text eol=lf
+*.plist          text eol=lf
+*.entitlements   text eol=lf
+*.yml            text eol=lf
+*.yaml           text eol=lf
+*.md             text eol=lf
+*.sh             text eol=lf
+
+# Binaries: no line ending normalisation and no byte diffs.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.mp4   binary
+*.mov   binary
+*.ttf   binary
+*.otf   binary
+*.woff  binary
+*.woff2 binary
+*.pdf   binary
+*.zip   binary
+
+# SVG is text, but a diff of a long path helps nobody in review.
+*.svg   text eol=lf -diff
+
+# Language stats: keep the landing page and the demo video workspace out of the
+# language bar, so the repository reads as the Swift app it is.
+landing/**  linguist-vendored=true
+video/**    linguist-vendored=true
+docs/**     linguist-documentation=true
+
+# Files that do not belong in a release source archive.
+.github/        export-ignore
+.gitattributes  export-ignore
+.gitignore      export-ignore
+.editorconfig   export-ignore

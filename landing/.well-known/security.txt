@@ -1,0 +1,5 @@
+Contact: https://github.com/noluyorAbi/lyricar/security/advisories/new
+Expires: 2027-10-21T00:00:00.000Z
+Preferred-Languages: en, de
+Canonical: https://lyricar.adatepe.dev/.well-known/security.txt
+Policy: https://github.com/noluyorAbi/lyricar/security/policy

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Device builds without the CarPlay grant: com.apple.developer.carplay-audio is a
+	     managed entitlement Apple grants on request, so it cannot be signed here.
+	     Once the grant exists, set LYRICAR_DEVICE_ENTITLEMENTS = Lyricar/Lyricar.entitlements
+	     in Config/Local.xcconfig (scripts/switch-to-paid-team.sh carplay option does it). -->
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>group.$(LYRICAR_BUNDLE_PREFIX).lyricar</string>
+	</array>
+</dict>
+</plist>

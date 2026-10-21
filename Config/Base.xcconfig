@@ -1,0 +1,21 @@
+// Defaults for a fresh clone. Your own values go into the gitignored Config/Local.xcconfig
+// (scripts/setup.sh writes it; Config/Local.xcconfig.example shows every setting).
+
+// Reverse-DNS prefix for every identifier: the app is $(LYRICAR_BUNDLE_PREFIX).lyricar,
+// the widget extension .lyricar.widgets, the App Group group.$(LYRICAR_BUNDLE_PREFIX).lyricar.
+LYRICAR_BUNDLE_PREFIX = com.example
+
+// Apple developer team ID. Empty is enough for Simulator builds.
+DEVELOPMENT_TEAM =
+
+// Spotify app client ID (PKCE, no secret).
+SPOTIFY_CLIENT_ID =
+
+// Entitlements for device builds. The default leaves out com.apple.developer.carplay-audio,
+// which Apple grants on request; scripts/switch-to-paid-team.sh --carplay switches to
+// Lyricar/Lyricar.entitlements once the grant exists.
+LYRICAR_DEVICE_ENTITLEMENTS = Lyricar/Lyricar-Device.entitlements
+
+// Older checkouts kept the client ID in Secrets.xcconfig; Local.xcconfig wins when both exist.
+#include? "Secrets.xcconfig"
+#include? "Local.xcconfig"

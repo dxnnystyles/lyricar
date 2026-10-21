@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--
+    Everything between launch:head:start and launch:head:end is generated from
+    content.json by sync.mjs. Do not hand edit it; edit content.json and run
+    "node sync.mjs".
+  -->
+  <!-- launch:head:start -->
+  <title>Lyricar, synced lyrics for whatever Spotify is playing</title>
+  <meta name="description" content="Open source iOS 26 app: line-synced lyrics for your Spotify playback on the iPhone, the Lock Screen, the Dynamic Island, widgets and CarPlay.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://lyricar.adatepe.dev">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lyricar">
+  <meta property="og:title" content="Lyricar, synced lyrics for whatever Spotify is playing">
+  <meta property="og:description" content="Open source iOS 26 app: line-synced lyrics for your Spotify playback on the iPhone, the Lock Screen, the Dynamic Island, widgets and CarPlay.">
+  <meta property="og:url" content="https://lyricar.adatepe.dev">
+  <meta property="og:image" content="https://lyricar.adatepe.dev/assets/og.png">
+  <meta property="og:image:alt" content="Lyricar: synced Spotify lyrics on the iPhone, the Lock Screen, widgets and CarPlay">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lyricar, synced lyrics for whatever Spotify is playing">
+  <meta name="twitter:description" content="Open source iOS 26 app: line-synced lyrics for your Spotify playback on the iPhone, the Lock Screen, the Dynamic Island, widgets and CarPlay.">
+  <meta name="twitter:image" content="https://lyricar.adatepe.dev/assets/og.png">
+  <meta name="twitter:image:alt" content="Lyricar: synced Spotify lyrics on the iPhone, the Lock Screen, widgets and CarPlay">
+  <!-- launch:head:end -->
+
+  <link rel="manifest" href="site.webmanifest">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Lyricar",
+    "description": "Synced lyrics for whatever is playing on your Spotify, on the iPhone, the Lock Screen, the Dynamic Island, widgets and CarPlay.",
+    "url": "https://lyricar.adatepe.dev/",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "iOS 26",
+    "license": "https://www.apache.org/licenses/LICENSE-2.0",
+    "codeRepository": "https://github.com/noluyorAbi/lyricar",
+    "image": "https://lyricar.adatepe.dev/assets/og.png",
+    "author": { "@type": "Person", "name": "Alperen Adatepe" }
+  }
+  </script>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="section hero" aria-labelledby="hero-heading">
+      <!-- launch:hero:start -->
+      <p class="wordmark">Lyricar</p>
+      <p class="eyebrow">Open source, iOS 26, Apache-2.0</p>
+      <h1 class="hero-title" id="hero-heading">Sing along to whatever Spotify is playing.</h1>
+      <p class="hero-sub">Synced lyrics for whatever is playing on your Spotify, on the iPhone, the Lock Screen, the Dynamic Island, widgets and CarPlay.</p>
+
+      <div class="install-strip">
+        <p class="install-label" id="hero-install-label">Get the source</p>
+        <div class="copy">
+          <pre class="copy-code" id="hero-install"><code>git clone https://github.com/noluyorAbi/lyricar.git</code></pre>
+          <button class="copy-btn" type="button" data-copy-target="hero-install" aria-label="Copy the command git clone https://github.com/noluyorAbi/lyricar.git to the clipboard">
+            <span class="copy-btn-label" aria-hidden="true">Copy</span>
+          </button>
+        </div>
+        <p class="install-then">Not on the App Store. You build it with Xcode 26 and your own Spotify developer app.</p>
+      </div>
+
+      <p class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/noluyorAbi/lyricar?utm_source=landing&amp;utm_medium=hero-primary" data-utm-slot="hero-primary" rel="noopener">Star on GitHub</a>
+        <a class="btn btn-secondary" href="https://github.com/noluyorAbi/lyricar?utm_source=landing&amp;utm_medium=hero-secondary" data-utm-slot="hero-secondary" rel="noopener">Build it yourself</a>
+      </p>
+      <!-- launch:hero:end -->
+    </section>
+
+    <!-- Screens: hand written, outside the generated regions -->
+    <section class="section section-screens" aria-labelledby="screens-heading">
+      <h2 class="section-title" id="screens-heading"><span>Everywhere the song is</span></h2>
+      <p class="prose">Real screenshots from the app, the widgets and the CarPlay Simulator.</p>
+
+      <div class="shots shots-phone">
+        <figure class="shot shot-phone">
+          <img src="assets/phone-karaoke.webp" width="600" height="1304" loading="eager" decoding="async" alt="Lyricar on the iPhone: the current line of Midnight City by M83 is bright white, the lines around it are dimmed, with Karaoke, Focus and Verse tabs at the bottom.">
+          <figcaption>The app. Tap a line to seek.</figcaption>
+        </figure>
+        <figure class="shot shot-phone">
+          <img src="assets/lockscreen-live-activity.webp" width="600" height="1304" loading="lazy" decoding="async" alt="The iPhone Lock Screen with a Lyricar Live Activity showing the current lyric line.">
+          <figcaption>Live Activity on the Lock Screen.</figcaption>
+        </figure>
+        <figure class="shot shot-phone">
+          <img src="assets/home-widgets.webp" width="600" height="1304" loading="lazy" decoding="async" alt="An iPhone Home Screen with several Lyricar widgets showing lyrics and playback buttons.">
+          <figcaption>Widgets that work with the app closed.</figcaption>
+        </figure>
+      </div>
+
+      <figure class="shot shot-island">
+        <img src="assets/dynamic-island-line.webp" width="1000" height="182" loading="lazy" decoding="async" alt="The Dynamic Island expanded around the current lyric line.">
+        <figcaption>The current line in the Dynamic Island.</figcaption>
+      </figure>
+
+      <h3 class="sub-title">CarPlay</h3>
+      <div class="shots shots-car">
+        <figure class="shot">
+          <img src="assets/carplay-karaoke.webp" width="800" height="480" loading="lazy" decoding="async" alt="Lyricar on a CarPlay screen in the Karaoke tab, the current line highlighted.">
+          <figcaption>Karaoke</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/carplay-focus.webp" width="800" height="480" loading="lazy" decoding="async" alt="Lyricar on a CarPlay screen in the Focus tab, one large lyric line.">
+          <figcaption>Focus</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/carplay-stage-styles.webp" width="800" height="480" loading="lazy" decoding="async" alt="Lyricar on a CarPlay screen in the Stage tab.">
+          <figcaption>Stage</figcaption>
+        </figure>
+      </div>
+
+      <h3 class="sub-title">Eight styles, three of them here</h3>
+      <div class="shots shots-styles">
+        <figure class="shot">
+          <img src="assets/style-midnight.webp" width="700" height="853" loading="lazy" decoding="async" alt="Contact sheet of the Midnight style across widgets, the Lock Screen and CarPlay.">
+          <figcaption>Midnight</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/style-neon.webp" width="700" height="853" loading="lazy" decoding="async" alt="Contact sheet of the Neon style, purple and pink, across widgets, the Lock Screen and CarPlay.">
+          <figcaption>Neon</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/style-daylight.webp" width="700" height="853" loading="lazy" decoding="async" alt="Contact sheet of the light Daylight style across widgets, the Lock Screen and CarPlay.">
+          <figcaption>Daylight</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Why this exists -->
+    <section class="section section-why" aria-labelledby="why-heading">
+      <!-- launch:why:start -->
+      <h2 class="section-title" id="why-heading"><svg class="icon section-icon" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8"/><polyline points="10 5 10 10 13.4 11.7"/></svg><span>How it works</span></h2>
+      <p class="prose">Lyricar asks Spotify what is playing, once per second while the app is visible, and fetches line-synced lyrics for that track from LRCLIB, a public lyrics database that needs no key. Between polls a local 10 Hz clock moves the highlight, so the current line stays in step; sync drift averages about 27 ms.</p>
+      <p class="prose">You sign in to Spotify with PKCE, so there is no client secret, no backend and no analytics. Your phone talks to Spotify and to LRCLIB, and to nothing else.</p>
+      <p class="highlight">No secret, no backend, no analytics.</p>
+      <!-- launch:why:end -->
+    </section>
+
+    <!-- Features -->
+    <section class="section section-features" aria-labelledby="features-heading">
+      <!-- launch:features:start -->
+      <h2 class="section-title" id="features-heading"><svg class="icon section-icon" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11.2 2.2 L4.5 11 h4.6 l-.3 6.8 L15.5 9 h-4.6 z"/></svg><span>What you get</span></h2>
+      <ul class="grid">
+        <li class="card">
+          <h3 class="card-title"><svg class="icon card-icon" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2.2 l1.9 4.6 l4.6 1.9 l-4.6 1.9 l-1.9 4.6 l-1.9-4.6 l-4.6-1.9 l4.6-1.9 z"/><line x1="15.8" y1="14.2" x2="15.8" y2="17.8"/><line x1="14" y1="16" x2="17.6" y2="16"/></svg><span>Karaoke on the iPhone</span></h3>
+          <p class="card-body">The current line lights up as it is sung. Tap any line to seek there, and nudge a track a little later or earlier if its timing is off.</p>
+        </li>
+        <li class="card">
+          <h3 class="card-title"><svg class="icon card-icon" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.4" y="8.6" width="13.2" height="8.6" rx="1.7"/><path d="M6.5 8.6 V6.2 a3.5 3.5 0 0 1 7 0 v2.4"/></svg><span>Lock Screen and Dynamic Island</span></h3>
+          <p class="card-body">A Live Activity carries the current line onto the Lock Screen and into the Dynamic Island. iOS 26 also shows it on the CarPlay dashboard.</p>
+        </li>
+        <li class="card">
+          <h3 class="card-title"><svg class="icon card-icon" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.2 3.6 H7.3 a1.6 1.6 0 0 1 1.28 .64 l.86 1.15 a1.6 1.6 0 0 0 1.28 .64 H15.8 a1.6 1.6 0 0 1 1.6 1.6 v7.2 a1.6 1.6 0 0 1-1.6 1.6 H4.2 a1.6 1.6 0 0 1-1.6-1.6 V5.2 a1.6 1.6 0 0 1 1.6-1.6 z"/></svg><span>Five widgets</span></h3>
+          <p class="card-body">Lyric Line, Up Next, Remote, Verse and Gauge. Their buttons work even with the app terminated.</p>
+        </li>
+        <li class="card">
+          <h3 class="card-title"><svg class="icon card-icon" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="3.3 14.2 8.3 9.2 3.3 4.2"/><line x1="10.4" y1="15.8" x2="16.7" y2="15.8"/></svg><span>A CarPlay app</span></h3>
+          <p class="card-body">Karaoke, Focus, Stage and Track tabs, built for a glance at the screen in the car.</p>
+        </li>
+        <li class="card">
+          <h3 class="card-title"><svg class="icon card-icon" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="2.9" y1="17.1" x2="17.1" y2="17.1"/><line x1="6" y1="17.1" x2="6" y2="10.5"/><line x1="10" y1="17.1" x2="10" y2="5.5"/><line x1="14" y1="17.1" x2="14" y2="8.2"/></svg><span>Eight styles</span></h3>
+          <p class="card-body">Midnight, Motorsport, Night Drive, Panoramic, Sport, Luxe, Neon and Daylight, applied across the app, the widgets and CarPlay.</p>
+        </li>
+        <li class="card">
+          <h3 class="card-title"><svg class="icon card-icon" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2.2 l6 2.2 v5.1 c0 3.9-2.6 6.5-6 8.3 c-3.4-1.8-6-4.4-6-8.3 V4.4 z"/></svg><span>Nothing in between</span></h3>
+          <p class="card-body">Spotify PKCE sign-in and the public LRCLIB API. No server of ours, no account, no tracking.</p>
+        </li>
+      </ul>
+      <!-- launch:features:end -->
+    </section>
+
+    <!-- Install and usage -->
+    <section class="section section-install" aria-labelledby="install-heading">
+      <!-- launch:install:start -->
+      <h2 class="section-title" id="install-heading"><svg class="icon section-icon" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17.5 12.5 v3.3 a1.7 1.7 0 0 1-1.7 1.7 H4.2 a1.7 1.7 0 0 1-1.7-1.7 v-3.3"/><polyline points="5.8 8.3 10 12.5 14.2 8.3"/><line x1="10" y1="12.5" x2="10" y2="2.5"/></svg><span>Build it yourself</span></h2>
+      <p class="prose">You need a Mac with Xcode 26, Homebrew, and a Spotify developer app of your own.</p>
+      <ol class="steps">
+        <li class="step">
+          <h3 class="step-title">Clone</h3>
+          <p class="step-body">Get the source.</p>
+          <div class="copy">
+          <pre class="copy-code" id="install-step-1"><code>git clone https://github.com/noluyorAbi/lyricar.git &amp;&amp; cd lyricar</code></pre>
+          <button class="copy-btn" type="button" data-copy-target="install-step-1" aria-label="Copy the command git clone https://github.com/noluyorAbi/lyricar.git &amp;&amp; cd lyricar to the clipboard">
+            <span class="copy-btn-label" aria-hidden="true">Copy</span>
+          </button>
+        </div>
+        </li>
+        <li class="step">
+          <h3 class="step-title">Generate the project</h3>
+          <p class="step-body">XcodeGen writes the Xcode project; the setup script asks for your Spotify client ID and signing details.</p>
+          <div class="copy">
+          <pre class="copy-code" id="install-step-2"><code>brew install xcodegen &amp;&amp; ./scripts/setup.sh</code></pre>
+          <button class="copy-btn" type="button" data-copy-target="install-step-2" aria-label="Copy the command brew install xcodegen &amp;&amp; ./scripts/setup.sh to the clipboard">
+            <span class="copy-btn-label" aria-hidden="true">Copy</span>
+          </button>
+        </div>
+        </li>
+        <li class="step">
+          <h3 class="step-title">Open and run</h3>
+          <p class="step-body">Pick your iPhone or a Simulator and press Run.</p>
+          <div class="copy">
+          <pre class="copy-code" id="install-step-3"><code>open Lyricar.xcodeproj</code></pre>
+          <button class="copy-btn" type="button" data-copy-target="install-step-3" aria-label="Copy the command open Lyricar.xcodeproj to the clipboard">
+            <span class="copy-btn-label" aria-hidden="true">Copy</span>
+          </button>
+        </div>
+        </li>
+      </ol>
+      <p class="note">Your Spotify app stays in Development Mode: up to 5 users, and its owner needs Spotify Premium. The README has every step.</p>
+      <!-- launch:install:end -->
+    </section>
+
+    <!-- Limits: hand written -->
+    <section class="section section-limits" aria-labelledby="limits-heading">
+      <h2 class="section-title" id="limits-heading"><span>Honest limits</span></h2>
+      <ul class="limits">
+        <li><strong>Not on the App Store.</strong> You build and install it yourself from source.</li>
+        <li><strong>Bring your own Spotify developer app.</strong> It runs in Development Mode: up to 5 users, and the app owner needs Spotify Premium.</li>
+        <li><strong>CarPlay in a real car</strong> needs Apple's CarPlay audio entitlement. Without it, the CarPlay app runs in the Simulator.</li>
+        <li><strong>Lyrics come from LRCLIB.</strong> If LRCLIB has no synced lyrics for a track, there is nothing to sync.</li>
+        <li><strong>Spotify is polled while the app is visible.</strong> Once per second, with a local clock filling the gaps.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="section site-footer">
+    <!-- launch:footer:start -->
+      <p class="footer-license">Apache License 2.0. Open source.</p>
+      
+      <nav class="footer-links" aria-label="Elsewhere">
+        <a class="footer-link" href="https://github.com/noluyorAbi/lyricar?utm_source=landing&amp;utm_medium=footer-repo" data-utm-slot="footer-repo" rel="noopener">GitHub</a>
+        <a class="footer-link" href="https://github.com/noluyorAbi/lyricar/blob/main/CHANGELOG.md?utm_source=landing&amp;utm_medium=footer-changelog" data-utm-slot="footer-changelog" rel="noopener">Changelog</a>
+        <a class="footer-link" href="https://github.com/noluyorAbi/lyricar/security/policy?utm_source=landing&amp;utm_medium=footer-security" data-utm-slot="footer-security" rel="noopener">Security</a>
+        <a class="footer-link" href="https://lrclib.net/?utm_source=landing&amp;utm_medium=footer-lrclib" data-utm-slot="footer-lrclib" rel="noopener">LRCLIB</a>
+      </nav>
+      <p class="footer-copy">Copyright 2026 Alperen Adatepe. Lyricar is not affiliated with, endorsed by or sponsored by Spotify. Spotify is a trademark of Spotify AB.</p>
+    <!-- launch:footer:end -->
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

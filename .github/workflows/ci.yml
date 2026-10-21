@@ -1,0 +1,74 @@
+# Continuous integration for Lyricar.
+#
+# Two jobs, both on the macos-26 runner (Xcode 26 is the default there):
+#   lyricskit  runs the unit tests of the LyricsKit Swift package
+#   app        generates the Xcode project and builds the app for the
+#              Simulator without code signing
+#
+# Actions are pinned to full commit SHAs. Dependabot keeps them current and
+# reads the version from the trailing comment.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lyricskit:
+    name: LyricsKit tests
+    runs-on: macos-26
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Toolchain versions
+        run: |
+          xcodebuild -version
+          swift --version
+
+      - name: swift test
+        working-directory: Packages/LyricsKit
+        run: swift test
+
+  app:
+    name: App build (Simulator)
+    runs-on: macos-26
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      # The example holds empty placeholders for the bundle prefix, the team
+      # and the Spotify client ID. Signing is disabled below, so no real
+      # values are needed to compile.
+      - name: Local configuration from the example
+        run: cp Config/Local.xcconfig.example Config/Local.xcconfig
+
+      - name: Generate the Xcode project
+        run: xcodegen generate
+
+      - name: Build for the Simulator
+        run: |
+          xcodebuild \
+            -project Lyricar.xcodeproj \
+            -scheme Lyricar \
+            -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' \
+            -configuration Debug \
+            CODE_SIGNING_ALLOWED=NO \
+            build

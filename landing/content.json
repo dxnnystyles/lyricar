@@ -1,0 +1,123 @@
+{
+  "site": {
+    "url": "https://lyricar.adatepe.dev",
+    "lang": "en",
+    "themeColor": "#0b0b0b",
+    "ogImage": "assets/og.png",
+    "ogImageAlt": "Lyricar: synced Spotify lyrics on the iPhone, the Lock Screen, widgets and CarPlay",
+    "twitterSite": "",
+    "twitterCreator": "",
+    "utm": {
+      "enabled": true,
+      "source": "landing",
+      "campaign": ""
+    }
+  },
+  "meta": {
+    "title": "Lyricar, synced lyrics for whatever Spotify is playing",
+    "description": "Open source iOS 26 app: line-synced lyrics for your Spotify playback on the iPhone, the Lock Screen, the Dynamic Island, widgets and CarPlay."
+  },
+  "project": {
+    "name": "Lyricar",
+    "wordmark": "Lyricar",
+    "repo": "https://github.com/noluyorAbi/lyricar"
+  },
+  "hero": {
+    "eyebrow": "Open source, iOS 26, Apache-2.0",
+    "headline": "Sing along to whatever Spotify is playing.",
+    "sub": "Synced lyrics for whatever is playing on your Spotify, on the iPhone, the Lock Screen, the Dynamic Island, widgets and CarPlay.",
+    "install": {
+      "label": "Get the source",
+      "command": "git clone https://github.com/noluyorAbi/lyricar.git",
+      "then": "Not on the App Store. You build it with Xcode 26 and your own Spotify developer app."
+    },
+    "primaryCta": {
+      "label": "Star on GitHub",
+      "href": "https://github.com/noluyorAbi/lyricar",
+      "slot": "hero-primary"
+    },
+    "secondaryCta": {
+      "label": "Build it yourself",
+      "href": "https://github.com/noluyorAbi/lyricar",
+      "slot": "hero-secondary"
+    }
+  },
+  "why": {
+    "heading": "How it works",
+    "icon": "clock",
+    "body": [
+      "Lyricar asks Spotify what is playing, once per second while the app is visible, and fetches line-synced lyrics for that track from LRCLIB, a public lyrics database that needs no key. Between polls a local 10 Hz clock moves the highlight, so the current line stays in step; sync drift averages about 27 ms.",
+      "You sign in to Spotify with PKCE, so there is no client secret, no backend and no analytics. Your phone talks to Spotify and to LRCLIB, and to nothing else."
+    ],
+    "highlight": "No secret, no backend, no analytics."
+  },
+  "features": {
+    "heading": "What you get",
+    "icon": "zap",
+    "items": [
+      {
+        "icon": "sparkle",
+        "title": "Karaoke on the iPhone",
+        "body": "The current line lights up as it is sung. Tap any line to seek there, and nudge a track a little later or earlier if its timing is off."
+      },
+      {
+        "icon": "lock",
+        "title": "Lock Screen and Dynamic Island",
+        "body": "A Live Activity carries the current line onto the Lock Screen and into the Dynamic Island. iOS 26 also shows it on the CarPlay dashboard."
+      },
+      {
+        "icon": "folder",
+        "title": "Five widgets",
+        "body": "Lyric Line, Up Next, Remote, Verse and Gauge. Their buttons work even with the app terminated."
+      },
+      {
+        "icon": "terminal",
+        "title": "A CarPlay app",
+        "body": "Karaoke, Focus, Stage and Track tabs, built for a glance at the screen in the car."
+      },
+      {
+        "icon": "chart",
+        "title": "Eight styles",
+        "body": "Midnight, Motorsport, Night Drive, Panoramic, Sport, Luxe, Neon and Daylight, applied across the app, the widgets and CarPlay."
+      },
+      {
+        "icon": "shield",
+        "title": "Nothing in between",
+        "body": "Spotify PKCE sign-in and the public LRCLIB API. No server of ours, no account, no tracking."
+      }
+    ]
+  },
+  "install": {
+    "heading": "Build it yourself",
+    "icon": "download",
+    "intro": "You need a Mac with Xcode 26, Homebrew, and a Spotify developer app of your own.",
+    "steps": [
+      {
+        "title": "Clone",
+        "body": "Get the source.",
+        "command": "git clone https://github.com/noluyorAbi/lyricar.git && cd lyricar"
+      },
+      {
+        "title": "Generate the project",
+        "body": "XcodeGen writes the Xcode project; the setup script asks for your Spotify client ID and signing details.",
+        "command": "brew install xcodegen && ./scripts/setup.sh"
+      },
+      {
+        "title": "Open and run",
+        "body": "Pick your iPhone or a Simulator and press Run.",
+        "command": "open Lyricar.xcodeproj"
+      }
+    ],
+    "note": "Your Spotify app stays in Development Mode: up to 5 users, and its owner needs Spotify Premium. The README has every step."
+  },
+  "footer": {
+    "license": "Apache License 2.0. Open source.",
+    "links": [
+      { "label": "GitHub", "href": "https://github.com/noluyorAbi/lyricar", "slot": "footer-repo" },
+      { "label": "Changelog", "href": "https://github.com/noluyorAbi/lyricar/blob/main/CHANGELOG.md", "slot": "footer-changelog" },
+      { "label": "Security", "href": "https://github.com/noluyorAbi/lyricar/security/policy", "slot": "footer-security" },
+      { "label": "LRCLIB", "href": "https://lrclib.net", "slot": "footer-lrclib" }
+    ],
+    "copyright": "Copyright 2026 Alperen Adatepe. Lyricar is not affiliated with, endorsed by or sponsored by Spotify. Spotify is a trademark of Spotify AB."
+  }
+}

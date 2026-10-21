@@ -1,0 +1,19 @@
+# Dependabot keeps the pinned workflow actions current. Lyricar has no other
+# package manager dependencies: LyricsKit is a local Swift package with no
+# external packages.
+version: 2
+
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Wait a week after a release before proposing it, so a compromised or
+    # broken action version has time to be noticed and pulled.
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "ci"
+    labels:
+      - "dependencies"

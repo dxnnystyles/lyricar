@@ -1,0 +1,137 @@
+name: Bug report
+description: Something in Lyricar does not do what it says it does
+title: "bug: "
+labels: ["bug", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. A report that someone can reproduce gets
+        fixed; a report that cannot be reproduced gets closed. The fields
+        below exist to make the first outcome the likely one.
+
+        Please do not report a security vulnerability here. Issues are public.
+        Use the private path described in
+        [SECURITY.md](https://github.com/noluyorAbi/lyricar/security/policy).
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Before you file
+      options:
+        - label: I searched the existing issues, open and closed
+          required: true
+        - label: I built from the latest main, or I have said below why not
+          required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you expected, and what happened instead.
+      placeholder: I played a song in Spotify, expected the lyrics to follow it, and the screen stayed on the previous song.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: >
+        The exact steps, in order, starting from a fresh launch of Lyricar.
+        Name the song and artist if the bug only shows with certain lyrics.
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where does it happen?
+      multiple: true
+      options:
+        - iPhone app
+        - Lock Screen Live Activity or Dynamic Island
+        - Home Screen or Lock Screen widget
+        - CarPlay
+        - Spotify sign-in
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: ios-version
+    attributes:
+      label: iOS version
+      description: Settings, General, About, iOS Version.
+      placeholder: "26.1"
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Device
+      description: The iPhone model, or the Simulator device if you saw it there.
+      placeholder: "iPhone 17 Pro, or iPhone 17 Pro Max Simulator"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: spotify-premium
+    attributes:
+      label: Spotify Premium
+      description: >
+        Playback controls and tap-to-seek need Spotify Premium. Lyrics
+        themselves work without it.
+      options:
+        - "Yes"
+        - "No"
+        - "Not sure"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: carplay
+    attributes:
+      label: CarPlay
+      options:
+        - Not using CarPlay
+        - CarPlay in the Simulator
+        - CarPlay in a real car
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Lyricar version or commit
+      description: The version from the app, or the commit you built from.
+      placeholder: "0.1.0, or a commit SHA"
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: >
+        Console or Xcode output, if you have it. Redact access tokens, your
+        Spotify user name and anything else you would not want on a public
+        page. This is rendered as a code block, so no backticks are needed.
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else
+      description: >
+        Screenshots, a screen recording, or what you already tried. Optional,
+        and often the most useful field here.
+    validations:
+      required: false

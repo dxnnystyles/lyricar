@@ -1,0 +1,15 @@
+# Every report goes through one of the forms in this directory.
+blank_issues_enabled: false
+
+contact_links:
+  - name: Question or idea
+    url: https://github.com/noluyorAbi/lyricar/discussions
+    about: Ask how something works, or float an idea before it becomes a request.
+
+  - name: Documentation
+    url: https://github.com/noluyorAbi/lyricar#readme
+    about: Setup, styles, CarPlay limits and how the sync works.
+
+  - name: Report a security vulnerability
+    url: https://github.com/noluyorAbi/lyricar/security/advisories/new
+    about: Private disclosure. Never report a vulnerability in a public issue.

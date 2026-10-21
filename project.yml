@@ -1,0 +1,115 @@
+name: Lyricar
+options:
+  deploymentTarget:
+    iOS: "26.0"
+  createIntermediateGroups: true
+# Team, bundle ID prefix and Spotify client ID come from Config/Base.xcconfig and the
+# gitignored Config/Local.xcconfig (scripts/setup.sh). Do not set them here: settings in
+# this file override the xcconfig.
+configFiles:
+  Debug: Config/Base.xcconfig
+  Release: Config/Base.xcconfig
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    CODE_SIGN_STYLE: Automatic
+    "CODE_SIGN_IDENTITY[sdk=iphonesimulator*]": "-"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+packages:
+  LyricsKit:
+    path: Packages/LyricsKit
+targets:
+  Lyricar:
+    type: application
+    platform: iOS
+    sources:
+      - Lyricar
+      - Shared
+    dependencies:
+      - package: LyricsKit
+      - target: LyricarWidgets
+    entitlements:
+      path: Lyricar/Lyricar.entitlements
+      properties:
+        com.apple.developer.carplay-audio: true
+        com.apple.security.application-groups:
+          - group.$(LYRICAR_BUNDLE_PREFIX).lyricar
+    info:
+      path: Lyricar/Info.plist
+      properties:
+        CFBundleDisplayName: Lyricar
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        NSSupportsLiveActivities: true
+        LSApplicationQueriesSchemes: [spotify]
+        UIAppFonts: [BarlowCondensed-ExtraBoldItalic.ttf, BarlowCondensed-BoldItalic.ttf, BarlowCondensed-SemiBold.ttf, Barlow-Light.ttf, Barlow-Regular.ttf, Barlow-Medium.ttf, Barlow-SemiBold.ttf]
+        SpotifyClientID: $(SPOTIFY_CLIENT_ID)
+        LyricarAppGroup: group.$(LYRICAR_BUNDLE_PREFIX).lyricar
+        CFBundleURLTypes:
+          - CFBundleURLName: $(LYRICAR_BUNDLE_PREFIX).lyricar.spotify
+            CFBundleURLSchemes: [lyricar]
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: true
+          UISceneConfigurations:
+            CPTemplateApplicationSceneSessionRoleApplication:
+              - UISceneConfigurationName: CarPlay
+                UISceneClassName: CPTemplateApplicationScene
+                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).CarPlaySceneDelegate
+        UIBackgroundModes: [audio]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(LYRICAR_BUNDLE_PREFIX).lyricar
+        "CODE_SIGN_ENTITLEMENTS[sdk=iphoneos*]": $(LYRICAR_DEVICE_ENTITLEMENTS)
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        TARGETED_DEVICE_FAMILY: "1"
+  LyricarWidgets:
+    type: app-extension
+    platform: iOS
+    sources:
+      - LyricarWidgets
+      - Shared
+    dependencies:
+      - package: LyricsKit
+      - sdk: WidgetKit.framework
+      - sdk: SwiftUI.framework
+    entitlements:
+      path: LyricarWidgets/LyricarWidgets.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.$(LYRICAR_BUNDLE_PREFIX).lyricar
+    info:
+      path: LyricarWidgets/Info.plist
+      properties:
+        CFBundleDisplayName: Lyricar
+        UIAppFonts: [BarlowCondensed-ExtraBoldItalic.ttf, BarlowCondensed-BoldItalic.ttf, BarlowCondensed-SemiBold.ttf, Barlow-Light.ttf, Barlow-Regular.ttf, Barlow-Medium.ttf, Barlow-SemiBold.ttf]
+        LyricarAppGroup: group.$(LYRICAR_BUNDLE_PREFIX).lyricar
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(LYRICAR_BUNDLE_PREFIX).lyricar.widgets
+        TARGETED_DEVICE_FAMILY: "1"
+  LyricarUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - LyricarUITests
+    dependencies:
+      - target: Lyricar
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(LYRICAR_BUNDLE_PREFIX).lyricar.uitests
+        TEST_TARGET_NAME: Lyricar
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  Lyricar:
+    build:
+      targets:
+        Lyricar: all
+    test:
+      targets:
+        - LyricarUITests
+    run:
+      config: Debug

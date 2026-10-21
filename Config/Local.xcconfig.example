@@ -1,0 +1,14 @@
+// Copy to Config/Local.xcconfig (gitignored) or run scripts/setup.sh, which writes it.
+
+// Your Apple developer team ID (Xcode, Settings, Accounts). Leave empty for Simulator only.
+DEVELOPMENT_TEAM =
+
+// A reverse-DNS prefix you control. Bundle IDs and the App Group are derived from it.
+LYRICAR_BUNDLE_PREFIX = com.example
+
+// Client ID of your app in the Spotify developer dashboard.
+// Redirect URI to register there: http://127.0.0.1:3000/spotify/callback
+SPOTIFY_CLIENT_ID =
+
+// Uncomment once Apple granted the CarPlay audio entitlement to your team.
+// LYRICAR_DEVICE_ENTITLEMENTS = Lyricar/Lyricar.entitlements

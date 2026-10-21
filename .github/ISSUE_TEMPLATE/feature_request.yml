@@ -1,0 +1,73 @@
+name: Feature request
+description: Suggest something Lyricar should be able to do
+title: "feat: "
+labels: ["enhancement", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Good feature requests start from a problem, not from a solution. Tell
+        us what you were trying to do and where Lyricar got in the way; the
+        shape of the fix is usually easier to agree on afterwards.
+
+        Lyricar says no to a lot of requests, and that is deliberate. A no is
+        not a judgement of the idea, only of the scope.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Before you file
+      options:
+        - label: I searched the existing issues and discussions
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: >
+        What are you trying to do, and what stops you today? Concrete beats
+        general: describe the actual situation you were in.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you would like to happen
+      description: >
+        Your proposed behaviour. Say where it should appear: the iPhone app,
+        the Live Activity, a widget, or CarPlay.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What you tried instead
+      description: >
+        Workarounds or other apps that half solve it. This tells us how much
+        the gap actually costs.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: breaking
+    attributes:
+      label: Would this change existing behaviour?
+      options:
+        - "No, it is purely additive"
+        - "Yes, it changes a default"
+        - "Yes, it removes or renames something"
+        - "I am not sure"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Are you willing to work on it?
+      description: There is no obligation.
+      options:
+        - label: I would be willing to open a pull request
+          required: false

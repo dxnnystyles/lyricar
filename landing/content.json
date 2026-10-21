@@ -46,7 +46,7 @@
     "heading": "How it works",
     "icon": "clock",
     "body": [
-      "Lyricar asks Spotify what is playing, once per second while the app is visible, and fetches line-synced lyrics for that track from LRCLIB, a public lyrics database that needs no key. Between polls a local 10 Hz clock moves the highlight, so the current line stays in step; sync drift averages about 27 ms.",
+      "Lyricar asks Spotify what is playing, once per second while the app is visible, and fetches line-synced lyrics for that track from LRCLIB, a public lyrics database that needs no key. Between polls a local 10 Hz clock moves the highlight, so the current line stays in step; the sync tests hold the clock within 60 ms of the true position.",
       "You sign in to Spotify with PKCE, so there is no client secret, no backend and no analytics. Your phone talks to Spotify and to LRCLIB, and to nothing else."
     ],
     "highlight": "No secret, no backend, no analytics."

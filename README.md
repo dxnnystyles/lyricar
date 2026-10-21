@@ -46,9 +46,11 @@
 
 <br>
 
-Spotify shows lyrics inside its own app and nowhere else. Lock the phone, open another app or get in the car, and they are gone. Lyricar follows your Spotify playback through the Web API, pulls line-synced lyrics from [LRCLIB](https://lrclib.net), and puts the current line wherever you glance: the Lock Screen, the Dynamic Island, a Home Screen widget, the CarPlay dashboard. The sync drift averages about 27 ms.
+Spotify shows lyrics inside its own app and nowhere else. Lock the phone, open another app or get in the car, and they are gone. Lyricar follows your Spotify playback through the Web API, pulls line-synced lyrics from [LRCLIB](https://lrclib.net), and puts the current line wherever you glance: the Lock Screen, the Dynamic Island, a Home Screen widget, the CarPlay dashboard. The sync tests hold the clock within 60 ms of the true position, even when a slow first request is 300 ms off (`SyncPrecisionTests`).
 
 It doubles as a small, readable example of the newer iOS surfaces: Live Activities, WidgetKit timelines that run without waking the app, App Intents that control playback from a widget, and CarPlay templates, all fed by one engine.
+
+No Spotify developer app yet? Run the Simulator with the `-LyricarDemo` launch argument and see it work in a minute.
 
 ## What you get
 

@@ -146,7 +146,7 @@
     <section class="section section-why" aria-labelledby="why-heading">
       <!-- launch:why:start -->
       <h2 class="section-title" id="why-heading"><svg class="icon section-icon" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8"/><polyline points="10 5 10 10 13.4 11.7"/></svg><span>How it works</span></h2>
-      <p class="prose">Lyricar asks Spotify what is playing, once per second while the app is visible, and fetches line-synced lyrics for that track from LRCLIB, a public lyrics database that needs no key. Between polls a local 10 Hz clock moves the highlight, so the current line stays in step; sync drift averages about 27 ms.</p>
+      <p class="prose">Lyricar asks Spotify what is playing, once per second while the app is visible, and fetches line-synced lyrics for that track from LRCLIB, a public lyrics database that needs no key. Between polls a local 10 Hz clock moves the highlight, so the current line stays in step; the sync tests hold the clock within 60 ms of the true position.</p>
       <p class="prose">You sign in to Spotify with PKCE, so there is no client secret, no backend and no analytics. Your phone talks to Spotify and to LRCLIB, and to nothing else.</p>
       <p class="highlight">No secret, no backend, no analytics.</p>
       <!-- launch:why:end -->

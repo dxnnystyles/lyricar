@@ -40,6 +40,8 @@
 <img src="https://raw.githubusercontent.com/noluyorAbi/lyricar/main/docs/screens/carplay-karaoke.png" width="49%" alt="CarPlay Karaoke tab, list windowed around the current line">
 <img src="https://raw.githubusercontent.com/noluyorAbi/lyricar/main/docs/screens/carplay-stage-styles.png" width="49%" alt="CarPlay Stage tab with the style picker">
 
+<sub>27 second walkthrough: <a href="https://github.com/noluyorAbi/lyricar/releases/download/v0.1.0/demo.mp4"><code>demo.mp4</code></a> in the <a href="https://github.com/noluyorAbi/lyricar/releases/tag/v0.1.0">v0.1.0 release</a>.</sub>
+
 </div>
 
 <br>

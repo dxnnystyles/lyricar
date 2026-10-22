@@ -162,6 +162,9 @@ Measured causes of drift and what fixed them:
 | Polling could hit Spotify's rate limit | 1 s only while a screen shows lyrics, 2 to 3 s in the background; a 429 pauses polling for `Retry-After` |
 | A lyrics file timed for a different release | Per-track nudge on phone and CarPlay, remembered per track |
 
+For the request midpoint, uncertainty, anchor selection and seek rule, see the
+[playback clock note](docs/sync.md).
+
 Home Screen widgets have one limit no code removes: WidgetKit grants roughly 40 to 70 background reloads per day. Widgets schedule every line themselves and only need a reload on a track change, pause or seek, so a normal day fits, but a long session with many skips can use up the budget. The Live Activity and CarPlay are not affected by it.
 
 Widget buttons work even when Lyricar is not running: the command handler is registered in the app initializer, and the buttons are `AudioPlaybackIntent`s, so iOS always runs them in the app. In the Simulator, with the app terminated, a tap on Next reaches Spotify 0.3 to 0.8 s later (`WidgetControlTests`).

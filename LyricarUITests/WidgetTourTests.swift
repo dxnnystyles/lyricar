@@ -1,8 +1,7 @@
 import XCTest
 
-/// Adds Lyricar widgets to the Simulator Home Screen through SpringBoard (German UI labels,
-/// matching this Simulator's locale) and attaches screenshots. Demo mode first, so the
-/// App Group holds a real lyric snapshot for the widgets to schedule from.
+/// Adds Lyricar widgets through SpringBoard and attaches screenshots to the Simulator tour.
+/// Demo mode first, so the App Group holds a real lyric snapshot for the widgets to schedule from.
 final class WidgetTourTests: XCTestCase {
     private let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
 
@@ -17,7 +16,7 @@ final class WidgetTourTests: XCTestCase {
         addWidget(swipes: 0) // Lyric Line, small
         addWidget(swipes: 1) // Verse, medium
 
-        let done = springboard.buttons["Fertig"].firstMatch
+        let done = springboard.buttons.matching(NSPredicate(format: "label IN %@", ["Fertig", "Done"])).firstMatch
         if done.waitForExistence(timeout: 5) { done.tap() }
         sleep(6)
         let attachment = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
@@ -27,10 +26,10 @@ final class WidgetTourTests: XCTestCase {
     }
 
     private func addWidget(swipes: Int) {
-        if !springboard.buttons["Bearbeiten"].exists {
+        let edit = springboard.buttons.matching(NSPredicate(format: "label == 'Bearbeiten' OR label CONTAINS[c] 'Edit'")).firstMatch
+        if !edit.exists {
             springboard.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.55)).press(forDuration: 2)
         }
-        let edit = springboard.buttons["Bearbeiten"].firstMatch
         XCTAssertTrue(edit.waitForExistence(timeout: 5))
         edit.tap()
         let add = springboard.buttons.matching(NSPredicate(format: "label CONTAINS[c] 'Widget'")).firstMatch
@@ -49,7 +48,7 @@ final class WidgetTourTests: XCTestCase {
             springboard.swipeLeft()
             sleep(1)
         }
-        let confirm = springboard.buttons.matching(NSPredicate(format: "label CONTAINS[c] 'hinzufügen'")).firstMatch
+        let confirm = springboard.buttons.matching(NSPredicate(format: "label CONTAINS[c] 'hinzufügen' OR label CONTAINS[c] 'Add'")).firstMatch
         XCTAssertTrue(confirm.waitForExistence(timeout: 5), springboard.buttons.debugDescription)
         confirm.tap()
         sleep(2)

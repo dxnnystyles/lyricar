@@ -199,7 +199,7 @@ xcodebuild test -project Lyricar.xcodeproj -scheme Lyricar \
   -only-testing:LyricarUITests -resultBundlePath build/tour.xcresult
 ```
 
-`WidgetTourTests` taps SpringBoard by its German labels ("Bearbeiten", "hinzufügen"); on an English Simulator adjust them. Widget and Live Activity button tests need a team-signed Simulator build: run `scripts/sign-simulator-build.sh` after `build-for-testing`, then `test-without-building`. CarPlay tests use the normal ad-hoc build.
+`WidgetTourTests` matches SpringBoard's English and German labels. Widget and Live Activity button tests need a team-signed Simulator build: run `scripts/sign-simulator-build.sh` after `build-for-testing`, then `test-without-building`. CarPlay tests use the normal ad-hoc build.
 
 Launch arguments for development:
 
